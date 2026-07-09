@@ -1,0 +1,2970 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoConnect | Educação Ambiental</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+
+:root{
+
+--verde:#1f8f4d;
+--verdeEscuro:#166534;
+--verdeClaro:#dcfce7;
+
+--fundo:#f5f7f5;
+--branco:#ffffff;
+
+--texto:#1f2937;
+--cinza:#6b7280;
+
+--borda:#e5e7eb;
+
+}
+
+
+body{
+
+background:var(--fundo);
+color:var(--texto);
+
+}
+
+
+/* HEADER */
+
+
+header{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+height:75px;
+
+background:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 5%;
+
+border-bottom:1px solid var(--borda);
+
+z-index:10;
+
+}
+
+
+
+.logo{
+
+font-size:27px;
+font-weight:800;
+
+}
+
+
+.logo span{
+
+color:var(--verde);
+
+}
+
+
+
+.search{
+
+width:420px;
+
+padding:13px 20px;
+
+border-radius:30px;
+
+border:1px solid var(--borda);
+
+outline:none;
+
+}
+
+
+
+.profile-mini{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.avatar{
+
+height:45px;
+width:45px;
+
+border-radius:50%;
+
+background:var(--verde);
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:700;
+
+}
+
+
+
+button{
+
+cursor:pointer;
+
+}
+
+
+
+.btn{
+
+background:var(--verde);
+
+color:white;
+
+border:none;
+
+padding:12px 22px;
+
+border-radius:25px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+background:var(--verdeEscuro);
+
+}
+
+
+
+/* ESTRUTURA */
+
+
+.container{
+
+max-width:1400px;
+
+margin:auto;
+
+padding-top:100px;
+
+display:grid;
+
+grid-template-columns:250px 1fr 280px;
+
+gap:25px;
+
+}
+
+
+
+
+/* MENU */
+
+
+.sidebar{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+height:max-content;
+
+position:sticky;
+
+top:95px;
+
+}
+
+
+
+.menu-item{
+
+padding:14px;
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+border-radius:14px;
+
+margin-bottom:8px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.menu-item:hover,
+.menu-item.active{
+
+background:var(--verdeClaro);
+
+color:var(--verdeEscuro);
+
+}
+
+
+
+/* CONTEÚDO */
+
+
+.card{
+
+background:white;
+
+border-radius:22px;
+
+padding:25px;
+
+margin-bottom:20px;
+
+border:1px solid var(--borda);
+
+}
+
+
+
+/* TITULOS DAS PÁGINAS */
+
+
+.page-title{
+
+font-size:30px;
+
+font-weight:800;
+
+color:var(--verdeEscuro);
+
+margin-bottom:10px;
+
+}
+
+
+
+.page-subtitle{
+
+color:var(--cinza);
+
+margin-bottom:25px;
+
+}
+
+
+
+/* DESTAQUE INICIAL */
+
+
+.destaque{
+
+background:linear-gradient(
+135deg,
+#dcfce7,
+#ffffff
+);
+
+border-left:6px solid var(--verde);
+
+padding:25px;
+
+border-radius:20px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.destaque h2{
+
+color:var(--verdeEscuro);
+
+font-size:28px;
+
+}
+
+
+
+.destaque p{
+
+margin-top:10px;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+/* POSTS */
+
+
+.post-header{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.post-header small{
+
+color:var(--cinza);
+
+}
+
+
+
+.post-text{
+
+margin:20px 0;
+
+line-height:1.7;
+
+}
+
+
+
+.post-image{
+
+height:300px;
+
+overflow:hidden;
+
+border-radius:18px;
+
+}
+
+
+
+.post-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+.post-actions{
+
+display:flex;
+
+gap:25px;
+
+padding-top:15px;
+
+border-top:1px solid var(--borda);
+
+}
+
+
+
+.action{
+
+color:var(--cinza);
+
+cursor:pointer;
+
+}
+
+
+
+.action:hover{
+
+color:var(--verde);
+
+}
+
+
+
+/* CARDS LATERAIS */
+
+
+.right-card{
+
+background:white;
+
+border-radius:20px;
+
+padding:20px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.small-item{
+
+padding:15px;
+
+background:#f0fdf4;
+
+border-radius:15px;
+
+margin-top:12px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.small-item:hover{
+
+transform:translateX(5px);
+
+}
+
+
+
+/* ITEM FAKE NEWS */
+
+
+.fake-card{
+
+border:2px solid var(--verde);
+
+background:#f0fdf4;
+
+}
+
+
+
+.fake-card h3{
+
+color:var(--verdeEscuro);
+
+}
+
+
+
+/* PÁGINAS */
+
+
+.page{
+
+display:none;
+
+}
+
+
+
+.page.active{
+
+display:block;
+
+}
+
+
+
+/* MODAL */
+
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+align-items:center;
+
+justify-content:center;
+
+z-index:20;
+
+}
+
+
+
+.modal-box{
+
+background:white;
+
+width:450px;
+
+padding:30px;
+
+border-radius:25px;
+
+}
+
+
+
+textarea{
+
+width:100%;
+
+height:140px;
+
+border-radius:15px;
+
+padding:15px;
+
+border:1px solid var(--borda);
+
+resize:none;
+
+}
+
+
+
+@media(max-width:1100px){
+
+.container{
+
+grid-template-columns:220px 1fr;
+
+}
+
+
+.right{
+
+display:none;
+
+}
+
+}
+
+#perfil .small-item{
+transition:.3s;
+}
+
+#perfil .small-item:hover{
+transform:translateY(-5px);
+}
+
+#perfil h2{
+letter-spacing:-0.5px;
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo">
+
+Eco<span>Connect</span>
+
+</div>
+
+
+<input 
+class="search"
+placeholder="Pesquisar ações ambientais..."
+>
+
+
+<div class="profile-mini">
+
+
+<button class="btn" onclick="abrirPost()">
+
+Criar publicação
+
+</button>
+
+
+<div class="avatar">
+
+P
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<div class="container">
+
+
+<aside class="sidebar">
+
+
+<div class="menu-item active" onclick="trocarPagina('inicio',this)">
+
+<i class="fa-solid fa-house"></i>
+
+Início
+
+</div>
+
+
+
+<div class="menu-item" onclick="trocarPagina('campanhas',this)">
+
+<i class="fa-solid fa-bullhorn"></i>
+
+Campanhas
+
+</div>
+
+
+
+
+<div class="menu-item" onclick="trocarPagina('comunidades',this)">
+
+<i class="fa-solid fa-users"></i>
+
+Comunidades
+
+</div>
+
+
+
+
+<div class="menu-item" onclick="trocarPagina('aprender',this)">
+
+<i class="fa-solid fa-book"></i>
+
+Aprender
+
+</div>
+
+
+
+
+<div class="menu-item" onclick="trocarPagina('explorar',this)">
+
+<i class="fa-solid fa-earth-americas"></i>
+
+Explorar
+
+</div>
+
+
+
+
+<div class="menu-item" onclick="trocarPagina('perfil',this)">
+
+<i class="fa-solid fa-user"></i>
+
+Perfil
+
+</div>
+
+
+
+</aside>
+
+
+
+<main>
+
+    <!-- ==========================
+INÍCIO
+========================== -->
+
+<section id="inicio" class="page active">
+
+
+<div class="card">
+
+<h1 class="page-title">
+Feed ambiental
+</h1>
+
+<p class="page-subtitle">
+Compartilhe ideias, projetos e atitudes sustentáveis.
+</p>
+
+</div>
+
+
+
+<!-- NOVO EM DESTAQUE -->
+
+<div class="destaque">
+
+
+<h2>
+🌱 Em destaque
+</h2>
+
+
+<p>
+Descubra campanhas ambientais, participe de comunidades e encontre conteúdos para transformar pequenas atitudes em grandes mudanças.
+</p>
+
+
+
+<br>
+
+
+<button class="btn" onclick="trocarPagina('campanhas')">
+
+Explorar campanhas
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- POST 1 -->
+
+
+<div class="card post">
+
+
+<div class="post-header">
+
+
+<div class="avatar">
+
+A
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+Ana Souza
+
+</h3>
+
+
+<small>
+
+há 20 minutos
+
+</small>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="post-image">
+
+
+<img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900">
+
+
+</div>
+
+
+
+
+
+
+
+<p class="post-text">
+
+
+Participei de uma ação de plantio de árvores
+na minha comunidade.
+
+
+Pequenas atitudes podem gerar grandes mudanças
+para o meio ambiente.
+
+
+<br><br>
+
+
+<span style="color:#1f8f4d;font-weight:600;">
+
+#Preservação
+
+</span>
+
+
+</p>
+
+
+
+
+
+
+
+
+<div class="post-actions">
+
+
+<div class="action" onclick="curtir(this)">
+
+
+<i class="fa-solid fa-heart"></i>
+
+<span>
+
+320
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="action" onclick="mostrarComentarios(this)">
+
+
+<i class="fa-solid fa-comment"></i>
+
+Comentários
+
+</div>
+
+
+
+
+<div class="action">
+
+
+<i class="fa-solid fa-share"></i>
+
+Compartilhar
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="comentarios" style="display:none;margin-top:20px;">
+
+
+<div class="small-item">
+
+Marina:
+<br>
+"Ótima iniciativa!"
+
+</div>
+
+
+
+<input 
+placeholder="Adicionar comentário..."
+style="
+width:100%;
+padding:12px;
+border-radius:15px;
+border:1px solid #ddd;
+"
+>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- POST 2 -->
+
+
+<div class="card post">
+
+
+
+<div class="post-header">
+
+
+<div class="avatar">
+
+R
+
+</div>
+
+
+
+<div>
+
+
+<h3>
+
+Recicla Brasil
+
+</h3>
+
+
+<small>
+
+há 2 horas
+
+</small>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="post-image">
+
+
+<img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=900">
+
+
+</div>
+
+
+
+
+
+
+
+<p class="post-text">
+
+
+A reciclagem começa com pequenas escolhas.
+
+
+Separar corretamente os resíduos ajuda a reduzir
+os impactos ambientais.
+
+
+<br><br>
+
+
+<span style="color:#1f8f4d;font-weight:600;">
+
+#Reciclagem
+
+</span>
+
+
+</p>
+
+
+
+
+
+
+
+
+<div class="post-actions">
+
+
+<div class="action" onclick="curtir(this)">
+
+
+<i class="fa-solid fa-heart"></i>
+
+<span>
+
+580
+
+</span>
+
+
+</div>
+
+
+
+
+
+<div class="action" onclick="mostrarComentarios(this)">
+
+
+<i class="fa-solid fa-comment"></i>
+
+Comentários
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="comentarios" style="display:none;">
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- POST 3 -->
+
+
+<div class="card post">
+
+
+
+<div class="post-header">
+
+
+<div class="avatar">
+
+O
+
+</div>
+
+
+
+<div>
+
+
+<h3>
+
+Oceanos Limpos
+
+</h3>
+
+
+<small>
+
+ontem
+
+</small>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<p class="post-text">
+
+
+O descarte incorreto de plástico ameaça a vida marinha.
+
+
+Reduzir o consumo é uma atitude essencial
+para proteger os oceanos.
+
+
+<br><br>
+
+
+<span style="color:#1f8f4d;font-weight:600;">
+
+#MenosPlástico
+
+</span>
+
+
+</p>
+
+
+
+
+
+
+<div class="post-actions">
+
+
+<div class="action" onclick="curtir(this)">
+
+
+<i class="fa-solid fa-heart"></i>
+
+<span>
+
+890
+
+</span>
+
+
+</div>
+
+
+
+
+<div class="action">
+
+<i class="fa-solid fa-comment"></i>
+
+Comentários
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ==========================
+CAMPANHAS
+========================== -->
+
+
+<section id="campanhas" class="page">
+
+
+<div class="card">
+
+
+<h1 class="page-title">
+
+Campanhas ambientais
+
+</h1>
+
+
+<p class="page-subtitle">
+
+Participe de ações que ajudam o planeta.
+
+</p>
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Refloresta Brasil
+
+</h3>
+
+
+<p>
+
+Projeto de plantio de árvores e recuperação de áreas naturais.
+
+</p>
+
+
+<br>
+
+
+<button class="btn">
+
+Participar
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Menos Plástico
+
+</h3>
+
+
+<p>
+
+Campanha para diminuir o uso de materiais descartáveis.
+
+</p>
+
+
+<br>
+
+
+<button class="btn">
+
+Participar
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Água para o Futuro
+
+</h3>
+
+
+<p>
+
+Conscientização sobre economia e preservação da água.
+
+</p>
+
+
+<br>
+
+
+<button class="btn">
+
+Participar
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ==========================
+COMUNIDADES
+========================== -->
+
+
+<section id="comunidades" class="page">
+
+
+<div class="card">
+
+
+<h1 class="page-title">
+
+Comunidades
+
+</h1>
+
+
+<p class="page-subtitle">
+
+Conecte-se com pessoas que compartilham os mesmos objetivos.
+
+</p>
+
+
+
+<div class="small-item comunidade">
+
+
+<h3>
+
+Reciclagem Consciente
+
+</h3>
+
+
+<p>
+
+Grupo para compartilhar ideias sobre reciclagem.
+
+</p>
+
+
+<p>
+
+18.420 membros
+
+</p>
+
+
+
+
+<button 
+class="btn participar"
+onclick="participar(this,'Reciclagem Consciente')">
+
+Entrar
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="small-item comunidade">
+
+
+<h3>
+
+Proteção dos Oceanos
+
+</h3>
+
+
+<p>
+
+Comunidade voltada para preservação marinha.
+
+</p>
+
+
+<p>
+
+25.800 membros
+
+</p>
+
+
+
+
+
+<button 
+class="btn participar"
+onclick="participar(this,'Proteção dos Oceanos')">
+
+Entrar
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="small-item comunidade">
+
+
+<h3>
+
+Energia Limpa
+
+</h3>
+
+
+<p>
+
+Discussões sobre fontes renováveis.
+
+</p>
+
+
+<p>
+
+12.350 membros
+
+</p>
+
+
+
+
+
+<button 
+class="btn participar"
+onclick="participar(this,'Energia Limpa')">
+
+Entrar
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ==========================
+APRENDER
+========================== -->
+
+
+<section id="aprender" class="page">
+
+
+<div class="card">
+
+
+<h1 class="page-title">
+
+Aprender
+
+</h1>
+
+
+<p class="page-subtitle">
+
+Conteúdos para entender melhor os desafios ambientais.
+
+</p>
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Educação ambiental nas redes sociais
+
+</h3>
+
+
+<p>
+
+Como plataformas digitais ajudam na conscientização ambiental.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Reciclagem
+
+</h3>
+
+
+<p>
+
+Aprenda sobre separação de resíduos e reaproveitamento.
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Consumo consciente
+
+</h3>
+
+
+<p>
+
+Pequenas escolhas podem reduzir impactos ambientais.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ==========================
+EXPLORAR
+========================== -->
+
+
+<section id="explorar" class="page">
+
+
+<div class="card">
+
+
+<h1 class="page-title">
+
+Explorar
+
+</h1>
+
+
+<p class="page-subtitle">
+
+Descubra conteúdos, projetos e informações ambientais.
+
+</p>
+
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Influenciadores ambientais
+
+</h3>
+
+
+<p>
+
+Criadores que divulgam práticas sustentáveis.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- FAKE NEWS CLICÁVEL -->
+
+
+<div class="small-item fake-card"
+onclick="trocarPagina('fake-news')">
+
+
+<h3>
+
+Fake News Ambientais 
+
+</h3>
+
+
+<p>
+
+Aprenda a identificar informações falsas sobre o meio ambiente.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Marketing verde
+
+</h3>
+
+
+<p>
+
+Entenda como empresas comunicam suas ações sustentáveis.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ==========================
+FAKE NEWS AMBIENTAIS - QUIZ
+========================== -->
+
+
+<section id="fake-news" class="page">
+
+
+<div class="card">
+
+
+<h1 class="page-title">
+
+Fake News Ambientais
+
+</h1>
+
+
+<p class="page-subtitle">
+
+Leia a publicação e descubra se a informação é verdadeira ou falsa.
+
+</p>
+
+
+
+
+
+<div class="card post">
+
+
+<div class="post-header">
+
+
+<div class="avatar">
+
+🌱
+
+</div>
+
+
+<div>
+
+<h3>
+
+EcoCuriosidades
+
+</h3>
+
+
+<small>
+
+Publicado hoje
+
+</small>
+
+
+</div>
+
+
+</div>
+
+<div class="post-image">
+
+<img src="https://images.unsplash.com/photo-1517783999520-f068d7431a60?w=1200">
+
+</div>
+
+
+
+
+
+
+<p class="post-text">
+
+<strong>Você sabia?</strong>
+
+<br><br>
+
+<div style="
+background:#dcfce7;
+border-left:6px solid #1f8f4d;
+padding:18px;
+border-radius:12px;
+font-size:24px;
+font-weight:800;
+color:#166534;
+text-align:center;
+line-height:1.5;
+margin:15px 0;
+">
+
+"O maior deserto da Terra não é o Saara.
+<br>
+É a Antártida."
+
+</div>
+
+<p style="
+text-align:center;
+font-size:18px;
+font-weight:600;
+color:#374151;
+">
+
+Essa afirmação é verdadeira ou falsa?
+
+</p>
+
+
+<div style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+margin-top:30px;
+">
+
+<button
+class="btn"
+style="
+width:100%;
+padding:18px;
+font-size:18px;
+font-weight:700;
+background:#dc2626;
+border-radius:14px;
+"
+onclick="responderFake(false)">
+
+ Fake News
+
+</button>
+
+<button
+class="btn"
+style="
+width:100%;
+padding:18px;
+font-size:18px;
+font-weight:700;
+background:#16a34a;
+border-radius:14px;
+"
+onclick="responderFake(true)">
+
+ É Verdade
+
+</button>
+
+</div>
+
+
+<div id="respostaFake" 
+style="
+display:none;
+margin-top:25px;
+padding:20px;
+border-radius:15px;
+background:#f0fdf4;
+border-left:5px solid #1f8f4d;
+">
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</section>
+
+<!-- ==========================
+PERFIL NOVO
+========================== -->
+
+
+<section id="perfil" class="page">
+
+
+<div class="card">
+
+
+<!-- CABEÇALHO DO PERFIL -->
+
+
+<div style="text-align:center;">
+
+
+<div class="avatar" style="
+width:130px;
+height:130px;
+font-size:45px;
+margin:auto;
+">
+
+
+P
+
+
+</div>
+
+
+
+<h2 style="margin-top:20px;font-size:30px;">
+
+Planeta Consciente
+
+</h2>
+
+<p style="
+color:#1f8f4d;
+font-weight:600;
+margin-top:5px;
+">
+
+@planetaconsciente
+
+</p>
+
+<p id="descricaoPerfil"
+style="
+margin:15px auto;
+max-width:500px;
+color:#6b7280;
+line-height:1.6;
+">
+
+Compartilhando informações, curiosidades e ações para incentivar a preservação do meio ambiente e um futuro mais sustentável.
+
+</p>
+
+
+
+
+<button class="btn" onclick="editarPerfil()">
+
+Editar perfil
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ESTATÍSTICAS -->
+
+
+<div style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:35px;
+">
+
+
+
+<div class="small-item"
+style="text-align:center;">
+
+<h2 style="color:#166534;">
+
+12
+
+</h2>
+
+<p>
+
+Publicações
+
+</p>
+
+</div>
+
+
+
+
+
+
+<div class="small-item"
+style="text-align:center;">
+
+<h2 style="color:#166534;">
+
+5
+
+</h2>
+
+<p>
+
+Campanhas
+
+</p>
+
+</div>
+
+
+
+
+
+
+<div class="small-item"
+style="text-align:center;">
+
+<h2 style="color:#166534;">
+
+3
+
+</h2>
+
+<p>
+
+Comunidades
+
+</p>
+
+</div>
+
+
+
+
+
+
+<div class="small-item"
+style="text-align:center;">
+
+<h2 style="color:#166534;">
+
+240
+
+</h2>
+
+<p>
+
+Pontos
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- CONQUISTAS -->
+
+
+<div style="margin-top:35px;">
+
+
+<h2 class="page-title"
+style="font-size:24px;">
+
+Conquistas
+
+</h2>
+
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+🌱 Primeiro plantio
+
+</h3>
+
+
+<p>
+
+Participou de uma ação de preservação ambiental.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+♻️ Reciclador consciente
+
+</h3>
+
+
+<p>
+
+Aprendeu e compartilhou práticas de reciclagem.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+🌎 Protetor dos oceanos
+
+</h3>
+
+
+<p>
+
+Apoiou iniciativas relacionadas à vida marinha.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- JORNADA -->
+
+
+<div style="margin-top:35px;">
+
+
+<h2 class="page-title"
+style="font-size:24px;">
+
+ Minha jornada ambiental
+
+</h2>
+
+
+
+
+<p style="margin-bottom:10px;">
+
+Nível atual: <strong>Defensor da Natureza</strong>
+
+</p>
+
+
+
+<div style="
+
+height:20px;
+
+background:#e5e7eb;
+
+border-radius:20px;
+
+overflow:hidden;
+
+">
+
+
+<div style="
+
+width:75%;
+
+height:100%;
+
+background:#1f8f4d;
+
+border-radius:20px;
+
+">
+
+</div>
+
+
+</div>
+
+
+
+<p style="
+margin-top:10px;
+color:#6b7280;
+">
+
+75% concluído para o próximo nível
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- INTERESSES -->
+
+
+<div style="margin-top:35px;">
+
+
+<h2 class="page-title"
+style="font-size:24px;">
+
+Interesses
+
+</h2>
+
+
+
+
+<div style="
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+">
+
+
+
+<span class="small-item">
+
+♻️ Reciclagem
+
+</span>
+
+
+
+<span class="small-item">
+
+🌳 Florestas
+
+</span>
+
+
+
+
+<span class="small-item">
+
+🌊 Oceanos
+
+</span>
+
+
+
+<span class="small-item">
+
+☀️ Energia limpa
+
+</span>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PARTICIPAÇÕES -->
+
+
+<div style="margin-top:35px;">
+
+
+<h2 class="page-title"
+style="font-size:24px;">
+
+Minhas participações
+
+</h2>
+
+
+
+
+
+<div id="participacoes">
+
+
+<div class="small-item">
+
+
+<h3>
+
+Refloresta Brasil
+
+</h3>
+
+
+<p>
+
+Participando atualmente
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="small-item">
+
+
+<h3>
+
+Menos Plástico
+
+</h3>
+
+
+<p>
+
+Participando atualmente
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- REMOVIDO O EM DESTAQUE DAQUI -->
+
+
+
+</aside>
+
+
+
+</div>
+
+
+
+
+
+<!-- MODAL PUBLICAÇÃO -->
+
+
+<div class="modal" id="modalPost">
+
+
+<div class="modal-box">
+
+
+<h2>
+
+Criar publicação
+
+</h2>
+
+
+<br>
+
+
+<textarea 
+id="textoPost"
+placeholder="Compartilhe uma ação ambiental..."
+></textarea>
+
+
+
+<br><br>
+
+
+
+<button class="btn" onclick="criarPublicacao()">
+
+Publicar
+
+</button>
+
+
+
+<button 
+class="btn"
+style="background:#777;"
+onclick="fecharPost()">
+
+Cancelar
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+
+
+// TROCAR PÁGINAS
+
+
+function trocarPagina(nome, elemento){
+
+
+document.querySelectorAll(".page")
+.forEach(p=>{
+
+p.classList.remove("active");
+
+});
+
+
+
+let pagina=document.getElementById(nome);
+
+
+
+if(pagina){
+
+pagina.classList.add("active");
+
+}
+
+
+
+if(elemento){
+
+
+document.querySelectorAll(".menu-item")
+.forEach(item=>{
+
+item.classList.remove("active");
+
+});
+
+
+elemento.classList.add("active");
+
+
+}
+
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+
+}
+
+
+
+
+
+
+
+// CURTIDAS
+
+
+function curtir(elemento){
+
+
+elemento.classList.toggle("curtido");
+
+
+let numero=
+elemento.querySelector("span");
+
+
+
+let valor=
+Number(numero.innerText);
+
+
+
+if(elemento.classList.contains("curtido")){
+
+
+valor++;
+
+
+}else{
+
+
+valor--;
+
+
+}
+
+
+
+numero.innerText=valor;
+
+
+}
+
+
+
+
+
+
+
+
+// COMENTÁRIOS
+
+
+function mostrarComentarios(botao){
+
+
+let post=
+botao.closest(".post");
+
+
+
+let comentarios=
+post.querySelector(".comentarios");
+
+
+
+if(comentarios.style.display==="none"){
+
+
+comentarios.style.display="block";
+
+
+}else{
+
+
+comentarios.style.display="none";
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+// MODAL
+
+
+function abrirPost(){
+
+
+document.getElementById("modalPost")
+.style.display="flex";
+
+
+}
+
+
+
+function fecharPost(){
+
+
+document.getElementById("modalPost")
+.style.display="none";
+
+
+}
+
+
+
+
+
+
+
+
+
+// CRIAR PUBLICAÇÃO
+
+
+function criarPublicacao(){
+
+
+let texto=
+document.getElementById("textoPost").value;
+
+
+
+if(texto.trim()==""){
+
+
+alert("Digite algo antes de publicar.");
+
+return;
+
+
+}
+
+
+
+let feed=
+document.getElementById("inicio");
+
+
+
+let post=
+document.createElement("div");
+
+
+
+post.className="card post";
+
+
+
+post.innerHTML=`
+
+<div class="post-header">
+
+
+<div class="avatar">
+
+D
+
+</div>
+
+
+
+<div>
+
+<h3>
+
+Duda
+
+</h3>
+
+
+<small>
+
+Agora
+
+</small>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<p class="post-text">
+
+${texto}
+
+</p>
+
+
+
+
+<div class="post-actions">
+
+
+<div class="action" onclick="curtir(this)">
+
+
+<i class="fa-solid fa-heart"></i>
+
+<span>
+
+0
+
+</span>
+
+
+</div>
+
+
+
+<div class="action">
+
+<i class="fa-solid fa-comment"></i>
+
+Comentários
+
+</div>
+
+
+
+</div>
+
+
+`;
+
+
+
+feed.appendChild(post);
+
+
+
+document.getElementById("textoPost").value="";
+
+
+fecharPost();
+
+
+}
+
+
+
+
+
+
+
+
+// EDITAR PERFIL
+
+
+function editarPerfil(){
+
+
+let novo=
+prompt("Digite uma nova descrição:");
+
+
+
+if(novo){
+
+
+document.getElementById("descricaoPerfil")
+.innerText=novo;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+// FECHAR MODAL CLICANDO FORA
+
+
+window.onclick=function(event){
+
+
+let modal=
+document.getElementById("modalPost");
+
+
+
+if(event.target==modal){
+
+
+modal.style.display="none";
+
+
+}
+
+
+}
+
+function responderFake(resposta){
+
+let caixa =
+document.getElementById("respostaFake");
+
+caixa.style.display="block";
+
+if(resposta){
+
+caixa.innerHTML = `
+
+<h3 style="color:#166534;">
+
+✅ Resposta correta!
+
+</h3>
+
+<p>
+
+Essa afirmação é <strong>verdadeira</strong>. Apesar de muita gente pensar que um deserto precisa ser quente, o que define um deserto é a baixa quantidade de chuva. A Antártida recebe pouquíssima precipitação durante o ano e, por isso, é considerada o <strong>maior deserto do planeta</strong>, sendo um deserto polar.
+
+</p>
+
+`;
+
+}else{
+
+caixa.innerHTML = `
+
+<h3 style="color:#b91c1c;">
+
+❌ Resposta incorreta.
+
+</h3>
+
+<p>
+
+Na verdade, essa afirmação é <strong>verdadeira</strong>. O Saara é o maior deserto quente do mundo, mas a Antártida é o maior deserto da Terra porque recebe muito pouca chuva ao longo do ano, característica que define um deserto.
+
+</p>
+
+`;
+
+}
+
+}
+</script>
+
+
+
+</body>
+
+</html>
